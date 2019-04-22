@@ -169,4 +169,28 @@ $(document).ready(function(){
         let sign = this.value;
         operate(sign); 
     });
+
+    $(".memoryModule button").click(function(){
+
+        let dataPlace = this.parentElement.parentElement.children[1];
+        //odwołanie do miejsca gdzie bedziemy przechowywać liczbe
+
+        switch(this.innerHTML){
+            case "M+":
+                dataPlace.value=res.value;
+                res.value="";
+            break;
+
+            case "M-":
+                dataPlace.value="";
+            break;
+
+            case "MR":
+                help.value+=dataPlace.value;
+                dataPlace.value="";
+            break;
+        }
+
+    });
+
 });
