@@ -22,6 +22,10 @@ td > button{
 
 .calc{
     height: 90vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .form-control{
@@ -34,6 +38,26 @@ table.table{
     width:50%;
 }
 
+.memoryModule{
+}
+
+.memory *{
+    margin:2px;
+}
+
+.memory{
+    width: 100%;
+}
+
+.memoryButtons{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
 @media only screen and (min-width: 1024px) {
     table.table{
         width:500px;
@@ -44,3 +68,4 @@ table.table{
   .link-modal{
     cursor: pointer;
   }
+
