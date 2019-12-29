@@ -5,6 +5,31 @@ $(document).ready(function(){
         arr = ["0","1","2","3","4","5","6","7","8","9"];
         arrC = ["+", "-", "/", "*"];
 
+        function operationChar(x){
+            if(res.value!=""){
+                help.value= res.value;
+                res.value= "";
+                help.value+=x;
+            }else{
+
+            if(help.value==""){}
+            else if(arrC.includes(help.value.charAt(help.value.length-1))){
+                help.value = help.value.substr(0,help.value.length-1);
+                help.value+=x;
+            }
+            else{help.value+=x;}
+            }
+        }
+
+        function writeNumber(num){
+            if(res.value==""){
+                help.value+=num;
+                }
+        }
+
+
+
+
     $(".btn.btn-outline-light").click(function(){
 
         function operate(x){
@@ -14,63 +39,43 @@ $(document).ready(function(){
                 x=parseInt(x);
                 switch(x){
                     case 0:
-                        if(res.value==""){
-                        help.value+="0";
-                        }
+                       writeNumber("0");
                     break;
     
                     case 1:
-                        if(res.value==""){
-                        help.value+="1";
-                        }
+                        writeNumber("1");
                     break;
                     
                     case 2:
-                        if(res.value==""){
-                        help.value+="2";
-                        }
+                        writeNumber("2");
                     break;
                     
                     case 3:
-                        if(res.value==""){
-                        help.value+="3";
-                        }
+                        writeNumber("3");
                     break;
                     
                     case 4:
-                        if(res.value==""){
-                        help.value+="4";
-                        }
+                        writeNumber("4");
                     break;
     
                     case 5:
-                        if(res.value==""){
-                        help.value+="5";
-                        }
+                        writeNumber("5");
                     break;
     
                     case 6:
-                        if(res.value==""){
-                        help.value+="6";
-                        }
+                        writeNumber("6");
                     break;
     
                     case 7:
-                        if(res.value==""){
-                        help.value+="7";
-                        }
+                        writeNumber("7");
                     break;
     
                     case 8:
-                        if(res.value==""){
-                        help.value+="8";
-                        }
+                        writeNumber("8");
                     break;
     
                     case 9:
-                        if(res.value==""){
-                        help.value+="9";
-                        }
+                        writeNumber("9");
                     break;
                 }
             }
@@ -84,68 +89,19 @@ $(document).ready(function(){
                         help.value = help.value.slice(0,help.value.length-1);
                     break;
                     case "/":
-
-                        if(res.value!=""){
-                            help.value= res.value;
-                            res.value= "";
-                            help.value+="/"
-                        }else{
-
-                        if(help.value==""){}
-                        else if(arrC.includes(help.value.charAt(help.value.length-1))){
-                            help.value = help.value.substr(0,help.value.length-1);
-                            help.value+="/";
-                        }
-                        else{help.value+="/";}
-                        }
+                        operationChar("/")
                     break;
 
                     case "X":
-
-                        if(res.value!=""){
-                        help.value= res.value;
-                        res.value= "";
-                        help.value+="*"
-                        }else{
-
-                        if(help.value==""){}
-                        else if(arrC.includes(help.value.charAt(help.value.length-1))){
-                        help.value = help.value.substr(0,help.value.length-1);
-                        help.value+="*";
-                        }
-                        else{help.value+="*";}
-                    }
+                        operationChar("*");
                     break;
 
                     case "-": 
-                    if(res.value!=""){
-                        help.value= res.value;
-                        res.value= "";
-                        help.value+="-"
-                        }else{
-
-                        if(help.value==""){}
-                        else if("-".includes(help.value.charAt(help.value.length-1))){
-                        help.value = help.value.substr(0,help.value.length-1);
-                        help.value+="-";
-                        }
-                        else{help.value+="-";}
-                    }
+                        operationChar("-");
                     break;
 
                     case "+":
-                    if(res.value!=""){
-                        help.value= res.value;
-                        res.value= "";
-                        help.value+="+"
-                        }else{
-                        if(help.value==""){}
-                        else if(arrC.includes(help.value.charAt(help.value.length-1))){
-                        help.value = help.value.substr(0,help.value.length-1);
-                        help.value+="+";
-                        }
-                        else{help.value+="+";}
-                    }
+                        operationChar("+");
                     break;
                     
                     case "=": 
